@@ -1,0 +1,5077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>API测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.3"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 2ex;
+    margin-bottom: 3ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /* width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 99%;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #74A474; }
+.failClass  { background-color: #FDD283; }
+.errorClass { background-color: #FF6600; }
+.passCase   { color: #6c6; }
+.failCase   { color: #FF6600; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+#div_base {
+            position:absolute;
+            top:0%;
+            left:5%;
+            right:5%;
+            width: auto;
+            height: auto;
+            margin: -15px 0 0 0;
+}
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+<div id="div_base">
+
+<div class='page-header'>
+<h1>API测试报告</h1>
+<p class='attribute'><strong>测试人:</strong> xiao hei ma</p>
+<p class='attribute'><strong>开始时间:</strong> 2019-09-11 09:00:17</p>
+<p class='attribute'><strong>运行时长:</strong> 0:01:21.298245</p>
+<p class='attribute'><strong>状态:</strong> 通过 87 失败 80</p>
+<p class='attribute'><strong>测试账号:</strong> 12133446108</p>
+
+</div>
+<p class='description'>接口html测试报告</p>
+
+
+
+<div class="btn-group btn-group-sm">
+<button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+<button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+<button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+</div>
+<p></p>
+<table id='result_table' class="table table-bordered">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>测试套件/测试用例</td>
+    <td>总数</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>查看</td>
+</tr>
+
+<tr class='failClass'>
+    <td>Api_test_case.QP_Api_Test</td>
+    <td>167</td>
+    <td>87</td>
+    <td>80</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',167)">详情</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='用户登录,正确账号密码,登录成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='用户登录,错误账号,正确密码,登录失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='用户登录,正确账号,错误密码,登录失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        通过</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='用户登录,账号为空,正确密码,登录失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        通过</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='用户登录,正确账号,密码为空,登录失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        通过</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取用户信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        通过</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取当日输赢值')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        通过</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取体验金活动id')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
+        失败</a>
+
+    <div id='div_ft1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.9: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='体验金活动id正确,领取成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '免费领取机会已用完,请充值后领取'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        通过</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='体验金活动id错误,领取失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        通过</a>
+
+    <div id='div_pt1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.11: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='体验金活动id为空,领取失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        失败</a>
+
+    <div id='div_ft1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请活动id正确,申请成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'method param miss:rule_id'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        通过</a>
+
+    <div id='div_pt1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请活动id错误,申请失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        通过</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.14: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id正确,获取奖品列表成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        失败</a>
+
+    <div id='div_ft1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.15: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id带特殊字符错误,获取奖品列表失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': []}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        通过</a>
+
+    <div id='div_pt1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id为空,获取奖品列表失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        通过</a>
+
+    <div id='div_pt1.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id正确,获取活动详情成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        通过</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id错误,获取活动详情失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.19')" >
+        通过</a>
+
+    <div id='div_pt1.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.19: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id为空,获取活动详情失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.20')" >
+        通过</a>
+
+    <div id='div_pt1.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.20: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取活动签到记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.21')" >
+        通过</a>
+
+    <div id='div_pt1.21' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.21').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.21: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='签到id正确,提交签到请求成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.22')" >
+        通过</a>
+
+    <div id='div_pt1.22' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.22').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.22: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='签到id错误,提交签到请求失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.23')" >
+        通过</a>
+
+    <div id='div_pt1.23' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.23').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.23: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='签到id为空,提交签到请求失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.24')" >
+        通过</a>
+
+    <div id='div_pt1.24' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.24').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.24: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='签到id为其他活动id,提交签到请求失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.25' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.25')" >
+        失败</a>
+
+    <div id='div_ft1.25' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.25').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.25: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id正确,抽取白银转盘活动成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '您当前没有积分!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.26')" >
+        通过</a>
+
+    <div id='div_pt1.26' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.26').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.26: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id错误,抽取白银转盘活动失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.27')" >
+        通过</a>
+
+    <div id='div_pt1.27' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.27').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.27: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id为空,抽取白银转盘活动失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.28' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.28')" >
+        失败</a>
+
+    <div id='div_ft1.28' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.28').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.28: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id正确,抽取黄金转盘活动成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '您当前没有积分!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.29' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.29')" >
+        失败</a>
+
+    <div id='div_ft1.29' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.29').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.29: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='活动id正确,抽取钻石转盘活动成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '您当前没有积分!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.30' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.30')" >
+        失败</a>
+
+    <div id='div_ft1.30' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.30').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.30: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入BB百家乐游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '进入游戏失败，请联系管理员，错误码：44444'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.31')" >
+        通过</a>
+
+    <div id='div_pt1.31' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.31').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.31: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入连环夺宝2游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.32' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.32')" >
+        失败</a>
+
+    <div id='div_ft1.32' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.32').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.32: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入连环夺宝游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '进入游戏失败，请联系管理员，错误码：44444'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.33' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.33')" >
+        失败</a>
+
+    <div id='div_ft1.33' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.33').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.33: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入187森林舞会游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.34' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.34')" >
+        失败</a>
+
+    <div id='div_ft1.34' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.34').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.34: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入糖果派对3游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.35' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.35')" >
+        失败</a>
+
+    <div id='div_ft1.35' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.35').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.35: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入BBIN奖池游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.36' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.36')" >
+        失败</a>
+
+    <div id='div_ft1.36' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.36').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.36: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入开心消消乐游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.37' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.37')" >
+        失败</a>
+
+    <div id='div_ft1.37' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.37').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.37: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入糖果派对游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.38' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.38')" >
+        失败</a>
+
+    <div id='div_ft1.38' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.38').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.38: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入糖果派对2游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.39' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.39')" >
+        失败</a>
+
+    <div id='div_ft1.39' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.39').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.39: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入猛龙传奇-老虎机游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.40' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.40')" >
+        失败</a>
+
+    <div id='div_ft1.40' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.40').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.40: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入金拉霸老虎机游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.41' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.41')" >
+        失败</a>
+
+    <div id='div_ft1.41' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.41').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.41: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入百搭777游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.42' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.42')" >
+        失败</a>
+
+    <div id='div_ft1.42' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.42').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.42: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入捕鱼达人游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.43' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.43')" >
+        失败</a>
+
+    <div id='div_ft1.43' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.43').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.43: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入飞禽走兽游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.44' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.44')" >
+        失败</a>
+
+    <div id='div_ft1.44' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.44').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.44: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入抢庄三公游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.45' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.45')" >
+        失败</a>
+
+    <div id='div_ft1.45' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.45').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.45: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入极速炸金花游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.46' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.46')" >
+        失败</a>
+
+    <div id='div_ft1.46' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.46').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.46: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入金鲨银鲨游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.47' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.47')" >
+        通过</a>
+
+    <div id='div_pt1.47' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.47').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.47: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入奔驰宝马游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.48' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.48')" >
+        通过</a>
+
+    <div id='div_pt1.48' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.48').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.48: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入百人牛牛游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.49' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.49')" >
+        通过</a>
+
+    <div id='div_pt1.49' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.49').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.49: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入森林舞会游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.50' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.50')" >
+        失败</a>
+
+    <div id='div_ft1.50' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.50').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.50: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入看三张抢庄牛牛游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.51' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.51')" >
+        失败</a>
+
+    <div id='div_ft1.51' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.51').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.51: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入射龙门游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.52' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.52')" >
+        失败</a>
+
+    <div id='div_ft1.52' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.52').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.52: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入百家乐游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.53' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.53')" >
+        失败</a>
+
+    <div id='div_ft1.53' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.53').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.53: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入斗地主游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.54' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.54')" >
+        失败</a>
+
+    <div id='div_ft1.54' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.54').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.54: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入十三水游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.55' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.55')" >
+        通过</a>
+
+    <div id='div_pt1.55' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.55').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.55: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入幸运五张游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.56' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.56')" >
+        通过</a>
+
+    <div id='div_pt1.56' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.56').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.56: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入抢庄牌九游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.57' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.57')" >
+        通过</a>
+
+    <div id='div_pt1.57' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.57').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.57: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入极速炸金花游戏成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.58' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.58')" >
+        失败</a>
+
+    <div id='div_ft1.58' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.58').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.58: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入通比牛牛游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.59' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.59')" >
+        失败</a>
+
+    <div id='div_ft1.59' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.59').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.59: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入21点游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.60' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.60')" >
+        失败</a>
+
+    <div id='div_ft1.60' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.60').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.60: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入押庄龙虎游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.61' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.61')" >
+        失败</a>
+
+    <div id='div_ft1.61' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.61').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.61: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入三公游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.62' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.62')" >
+        失败</a>
+
+    <div id='div_ft1.62' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.62').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.62: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入炸金花游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.63' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.63')" >
+        失败</a>
+
+    <div id='div_ft1.63' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.63').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.63: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入抢庄牛牛游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.64' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.64')" >
+        失败</a>
+
+    <div id='div_ft1.64' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.64').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.64: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入二八杠游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.65' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.65')" >
+        失败</a>
+
+    <div id='div_ft1.65' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.65').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.65: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='进入德州扑克游戏成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.66' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.66')" >
+        失败</a>
+
+    <div id='div_ft1.66' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.66').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.66: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='KY游戏平台号正确,余额转出成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.67' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.67')" >
+        失败</a>
+
+    <div id='div_ft1.67' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.67').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.67: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='KY游戏平台号错误,余额转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.68' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.68')" >
+        失败</a>
+
+    <div id='div_ft1.68' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.68').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.68: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='KY游戏平台号为空,余额转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.69' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.69')" >
+        失败</a>
+
+    <div id='div_ft1.69' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.69').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.69: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='BBIN游戏平台号正确,余额转出成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.70' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.70')" >
+        失败</a>
+
+    <div id='div_ft1.70' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.70').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.70: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='AGIN游戏平台号正确,余额转出成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.71' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.71')" >
+        通过</a>
+
+    <div id='div_pt1.71' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.71').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.71: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='JDB游戏平台号正确,余额转出成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.72' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.72')" >
+        失败</a>
+
+    <div id='div_ft1.72' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.72').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.72: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='原始密码正确,新密码正确,编辑成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '原始支付密码错误,请重新输入'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.73' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.73')" >
+        通过</a>
+
+    <div id='div_pt1.73' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.73').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.73: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='原始密码错误,新密码正确,编辑失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.74' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.74')" >
+        通过</a>
+
+    <div id='div_pt1.74' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.74').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.74: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='原始密码为空,新密码正确,编辑失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.75' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.75')" >
+        通过</a>
+
+    <div id='div_pt1.75' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.75').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.75: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='原始密码正确,新密码不一致,编辑失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.76' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.76')" >
+        通过</a>
+
+    <div id='div_pt1.76' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.76').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.76: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='原始密码正确,新密码一致长度不对,编辑失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.77' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.77')" >
+        通过</a>
+
+    <div id='div_pt1.77' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.77').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.77: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='原始密码正确,新密码为空,编辑失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.78' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.78')" >
+        失败</a>
+
+    <div id='div_ft1.78' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.78').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.78: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='支付宝姓名带特殊符号,账号正确,绑定支付宝失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 39, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应msg: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_msg, response['msg'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;真实姓名必须为中文&gt;,实际响应msg: &lt;支付宝不能重复绑定,修改请联系客服&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.79' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.79')" >
+        通过</a>
+
+    <div id='div_pt1.79' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.79').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.79: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='支付宝姓名正确,账号带特殊字符,绑定支付宝失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.80' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.80')" >
+        失败</a>
+
+    <div id='div_ft1.80' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.80').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.80: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='支付宝姓名为空,账号正确,绑定支付宝失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 39, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应msg: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_msg, response['msg'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;请输入支付宝姓名&gt;,实际响应msg: &lt;支付宝不能重复绑定,修改请联系客服&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.81' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.81')" >
+        失败</a>
+
+    <div id='div_ft1.81' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.81').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.81: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='支付宝姓名,账号正确,绑定支付宝成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 39, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应msg: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_msg, response['msg'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;请输入支付宝账号&gt;,实际响应msg: &lt;支付宝不能重复绑定,修改请联系客服&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.82' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.82')" >
+        失败</a>
+
+    <div id='div_ft1.82' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.82').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.82: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='支付宝姓名,账号正确,绑定支付宝成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.83' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.83')" >
+        通过</a>
+
+    <div id='div_pt1.83' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.83').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.83: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款信息正确,入款提交成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.84' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.84')" >
+        失败</a>
+
+    <div id='div_ft1.84' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.84').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.84: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款存款姓名带特殊字符错误,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.85' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.85')" >
+        失败</a>
+
+    <div id='div_ft1.85' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.85').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.85: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款存款姓名为空,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.86' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.86')" >
+        失败</a>
+
+    <div id='div_ft1.86' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.86').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.86: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款存款账户带特殊字符错误,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.87' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.87')" >
+        失败</a>
+
+    <div id='div_ft1.87' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.87').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.87: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款存款账户为空,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.88' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.88')" >
+        失败</a>
+
+    <div id='div_ft1.88' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.88').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.88: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款存款银行带特殊字符错误,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.89' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.89')" >
+        失败</a>
+
+    <div id='div_ft1.89' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.89').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.89: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款存款银行为空,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.90' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.90')" >
+        通过</a>
+
+    <div id='div_pt1.90' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.90').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.90: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款金额超出最大金额限制,入款提交失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.91' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.91')" >
+        通过</a>
+
+    <div id='div_pt1.91' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.91').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.91: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款金额等于最大限制金额,入款提交成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.92' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.92')" >
+        通过</a>
+
+    <div id='div_pt1.92' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.92').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.92: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款金额小于最大限制金额,入款提交成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.93' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.93')" >
+        通过</a>
+
+    <div id='div_pt1.93' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.93').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.93: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款金额大于最小限制金额,入款提交成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.94' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.94')" >
+        通过</a>
+
+    <div id='div_pt1.94' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.94').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.94: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款金额小于最小限制金额,入款提交失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.95' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.95')" >
+        通过</a>
+
+    <div id='div_pt1.95' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.95').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.95: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款金额等于最小限制金额,入款提交成功')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.96' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.96')" >
+        失败</a>
+
+    <div id='div_ft1.96' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.96').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.96: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款姓名,卡号为空,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.97' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.97')" >
+        失败</a>
+
+    <div id='div_ft1.97' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.97').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.97: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='公司入款入款姓名,卡号,银行为空,入款提交失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;0&gt;,实际响应结果: &lt;{'code': 0, 'msg': '操作成功', 'data': True}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.98' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.98')" >
+        失败</a>
+
+    <div id='div_ft1.98' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.98').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.98: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请提款金额小于最小金额限制,申请失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 39, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应msg: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_msg, response['msg'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;单笔出款下限:50&gt;,实际响应msg: &lt; 余额不足！&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': ' 余额不足！'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.99' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.99')" >
+        通过</a>
+
+    <div id='div_pt1.99' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.99').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.99: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请提款金额大于自身金额,申请失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.100' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.100')" >
+        失败</a>
+
+    <div id='div_ft1.100' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.100').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.100: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请提款金额大于最大限制金额,申请失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 39, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应msg: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_msg, response['msg'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;单笔出款上限:10000&gt;,实际响应msg: &lt; 余额不足！&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': ' 余额不足！'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.101' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.101')" >
+        通过</a>
+
+    <div id='div_pt1.101' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.101').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.101: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请提款金额为空,申请失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.102' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.102')" >
+        失败</a>
+
+    <div id='div_ft1.102' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.102').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.102: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请提款金额等于最小金额限制,申请成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': ' 余额不足！'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.103' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.103')" >
+        失败</a>
+
+    <div id='div_ft1.103' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.103').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.103: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='申请提款金额大于最小金额限制,申请成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': ' 余额不足！'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.104' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.104')" >
+        通过</a>
+
+    <div id='div_pt1.104' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.104').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.104: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转入金额大于自身金额,转入失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.105' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.105')" >
+        失败</a>
+
+    <div id='div_ft1.105' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.105').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.105: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转入金额小于自身金额,转入成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': '资金不足,请先充值!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.106' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.106')" >
+        通过</a>
+
+    <div id='div_pt1.106' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.106').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.106: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转入金额带特殊字符错误,转入失败')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.107' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.107')" >
+        失败</a>
+
+    <div id='div_ft1.107' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.107').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.107: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转入金额为空,转入失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,9秒再重试!', 'data': '请求频率过高,9秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.108' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.108')" >
+        失败</a>
+
+    <div id='div_ft1.108' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.108').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.108: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转出金额大于余额宝金额,转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,9秒再重试!', 'data': '请求频率过高,9秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.109' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.109')" >
+        失败</a>
+
+    <div id='div_ft1.109' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.109').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.109: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转出金额小于余额宝金额,转出成功')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,8秒再重试!', 'data': '请求频率过高,8秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.110' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.110')" >
+        失败</a>
+
+    <div id='div_ft1.110' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.110').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.110: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转出金额小于余额宝金额,转出密码带特殊字符错误,转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,8秒再重试!', 'data': '请求频率过高,8秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.111' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.111')" >
+        失败</a>
+
+    <div id='div_ft1.111' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.111').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.111: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转出金额小于余额宝金额,转出密码为空,转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,8秒再重试!', 'data': '请求频率过高,8秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.112' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.112')" >
+        失败</a>
+
+    <div id='div_ft1.112' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.112').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.112: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转出金额为空,转出密码正确,转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,7秒再重试!', 'data': '请求频率过高,7秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.113' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.113')" >
+        失败</a>
+
+    <div id='div_ft1.113' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.113').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.113: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='余额宝转出金额为负数,转出密码正确,转出失败')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;1000001&gt;,实际响应code: &lt;1000008&gt;,实际响应结果: &lt;{'code': 1000008, 'msg': '请求频率过高,7秒再重试!', 'data': '请求频率过高,7秒再重试!'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.114' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.114')" >
+        通过</a>
+
+    <div id='div_pt1.114' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.114').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.114: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取活动大奖记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.115' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.115')" >
+        通过</a>
+
+    <div id='div_pt1.115' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.115').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.115: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取活动抽奖记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.116' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.116')" >
+        通过</a>
+
+    <div id='div_pt1.116' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.116').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.116: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取本周签到状态')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.117' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.117')" >
+        通过</a>
+
+    <div id='div_pt1.117' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.117').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.117: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.118' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.118')" >
+        通过</a>
+
+    <div id='div_pt1.118' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.118').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.118: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取弹窗公告')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.119' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.119')" >
+        通过</a>
+
+    <div id='div_pt1.119' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.119').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.119: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取余额宝余额信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.120' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.120')" >
+        通过</a>
+
+    <div id='div_pt1.120' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.120').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.120: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取跑马灯公告')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.121' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.121')" >
+        通过</a>
+
+    <div id='div_pt1.121' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.121').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.121: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取系统设置信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.122' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.122')" >
+        通过</a>
+
+    <div id='div_pt1.122' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.122').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.122: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取余额宝规则信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.123' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.123')" >
+        通过</a>
+
+    <div id='div_pt1.123' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.123').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.123: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取余额宝资金明细信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.124' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.124')" >
+        通过</a>
+
+    <div id='div_pt1.124' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.124').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.124: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取余额宝下次收益到账时间')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.125' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.125')" >
+        通过</a>
+
+    <div id='div_pt1.125' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.125').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.125: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取提款扣款信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.126' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.126')" >
+        通过</a>
+
+    <div id='div_pt1.126' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.126').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.126: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取进入奖金榜信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.127' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.127')" >
+        通过</a>
+
+    <div id='div_pt1.127' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.127').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.127: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取余额信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.128' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.128')" >
+        通过</a>
+
+    <div id='div_pt1.128' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.128').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.128: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取个人抽奖记录信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.129' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.129')" >
+        通过</a>
+
+    <div id='div_pt1.129' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.129').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.129: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='邮件全部阅读')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.130' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.130')" >
+        通过</a>
+
+    <div id='div_pt1.130' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.130').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.130: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='邮件全部删除')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.131' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.131')" >
+        通过</a>
+
+    <div id='div_pt1.131' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.131').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.131: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取vip充值列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.132' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.132')" >
+        通过</a>
+
+    <div id='div_pt1.132' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.132').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.132: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取公司入款列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.133' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.133')" >
+        通过</a>
+
+    <div id='div_pt1.133' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.133').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.133: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取支付渠道')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.134' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.134')" >
+        通过</a>
+
+    <div id='div_pt1.134' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.134').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.134: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取代理收益信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.135' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.135')" >
+        通过</a>
+
+    <div id='div_pt1.135' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.135').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.135: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取代理返利榜单')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.136' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.136')" >
+        通过</a>
+
+    <div id='div_pt1.136' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.136').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.136: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取代理佣金领取记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.137' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.137')" >
+        通过</a>
+
+    <div id='div_pt1.137' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.137').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.137: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取推广奖励信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.138' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.138')" >
+        通过</a>
+
+    <div id='div_pt1.138' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.138').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.138: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取直属会员列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.139' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.139')" >
+        通过</a>
+
+    <div id='div_pt1.139' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.139').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.139: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取充值记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.140' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.140')" >
+        通过</a>
+
+    <div id='div_pt1.140' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.140').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.140: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取账变记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.141' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.141')" >
+        通过</a>
+
+    <div id='div_pt1.141' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.141').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.141: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取取款记录')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.142' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.142')" >
+        通过</a>
+
+    <div id='div_pt1.142' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.142').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.142: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='所有平台资金转出')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.143' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.143')" >
+        通过</a>
+
+    <div id='div_pt1.143' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.143').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.143: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取跑马灯中奖信息')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.144' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.144')" >
+        通过</a>
+
+    <div id='div_pt1.144' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.144').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.144: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取银行列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.145' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.145')" >
+        通过</a>
+
+    <div id='div_pt1.145' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.145').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.145: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取轮播')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.146' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.146')" >
+        通过</a>
+
+    <div id='div_pt1.146' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.146').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.146: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取联系客服')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.147' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.147')" >
+        通过</a>
+
+    <div id='div_pt1.147' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.147').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.147: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取首页最近一条公告')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.148' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.148')" >
+        通过</a>
+
+    <div id='div_pt1.148' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.148').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.148: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取公告列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.149' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.149')" >
+        通过</a>
+
+    <div id='div_pt1.149' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.149').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.149: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取推广规则链接')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.150' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.150')" >
+        通过</a>
+
+    <div id='div_pt1.150' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.150').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.150: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取转盘今日有效投注')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.151' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.151')" >
+        通过</a>
+
+    <div id='div_pt1.151' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.151').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.151: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取分享领金币')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.152' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.152')" >
+        通过</a>
+
+    <div id='div_pt1.152' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.152').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.152: 
+SubTestCase Pass:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取活动列表')
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.153' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.153')" >
+        失败</a>
+
+    <div id='div_ft1.153' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.153').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.153: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取综合站游戏列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.154' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.154')" >
+        失败</a>
+
+    <div id='div_ft1.154' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.154').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.154: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取综合站KY固定游戏列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.155' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.155')" >
+        失败</a>
+
+    <div id='div_ft1.155' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.155').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.155: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取综合站AGIN固定游戏列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.156' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.156')" >
+        失败</a>
+
+    <div id='div_ft1.156' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.156').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.156: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取综合站BBIN固定游戏列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.157' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.157')" >
+        失败</a>
+
+    <div id='div_ft1.157' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.157').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.157: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取综合站游戏平台列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.158' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.158')" >
+        失败</a>
+
+    <div id='div_ft1.158' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.158').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.158: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏平台真人子列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.159' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.159')" >
+        失败</a>
+
+    <div id='div_ft1.159' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.159').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.159: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏平台电子子列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.160' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.160')" >
+        失败</a>
+
+    <div id='div_ft1.160' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.160').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.160: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏平台彩票子列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.161' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.161')" >
+        失败</a>
+
+    <div id='div_ft1.161' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.161').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.161: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏平台棋牌子列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.162' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.162')" >
+        失败</a>
+
+    <div id='div_ft1.162' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.162').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.162: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏平台体育子列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.163' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.163')" >
+        失败</a>
+
+    <div id='div_ft1.163' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.163').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.163: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取游戏平台捕鱼子列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.164' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.164')" >
+        失败</a>
+
+    <div id='div_ft1.164' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.164').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.164: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='综合站收藏夹添加游戏')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.165' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.165')" >
+        失败</a>
+
+    <div id='div_ft1.165' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.165').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.165: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='综合站收藏夹列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.166' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.166')" >
+        失败</a>
+
+    <div id='div_ft1.166' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.166').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.166: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='综合站收藏夹删除游戏')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.167' class='none'>
+    <td class='failCase'><div class='testcase'>test_api_all: 主运行函数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.167')" >
+        失败</a>
+
+    <div id='div_ft1.167' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.167').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.167: 
+SubTestCase Failed:
+test_api_all (Api_test_case.QP_Api_Test) (case='获取综合站捕鱼游戏列表')Traceback (most recent call last):
+  File "E:\py_Api_test\QP_Case\Api_test_case.py", line 72, in test_api_all
+    self.e.assertHTTPCode(response, expect_code, expect_msg)
+  File "E:\py_Api_test\Utils\Assertion.py", line 32, in assertHTTPCode
+    '预期结果不在实际结果中!,预期结果: &lt;{}&gt;,实际响应code: &lt;{}&gt;,实际响应结果: &lt;{}&gt;'.format(expect_code, response['code'], response))
+AssertionError: 预期结果不在实际结果中!,预期结果: &lt;0&gt;,实际响应code: &lt;1000001&gt;,实际响应结果: &lt;{'code': 1000001, 'msg': 'controller not exists:Index'}&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>总计</td>
+    <td>167</td>
+    <td>87</td>
+    <td>80</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</div>
+</body>
+</html>

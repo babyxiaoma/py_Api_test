@@ -1,0 +1,417 @@
+2019-09-09 09:00:17,991 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '还未达到此活动领取条件'}>
+2019-09-09 09:00:18,953 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': []}>
+2019-09-09 09:00:23,094 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '您当前没有积分!'}>
+2019-09-09 09:00:24,533 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '您当前没有积分!'}>
+2019-09-09 09:00:25,271 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '您当前没有积分!'}>
+2019-09-09 09:00:30,300 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '余额不足.'}>
+2019-09-09 09:00:31,621 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '余额不足.'}>
+2019-09-09 09:00:31,932 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}>
+2019-09-09 09:00:32,250 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:32,547 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:32,836 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:33,128 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:33,420 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:33,710 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:34,007 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:34,336 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}>
+2019-09-09 09:00:34,643 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}>
+2019-09-09 09:00:34,930 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}>
+2019-09-09 09:00:35,226 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}>
+2019-09-09 09:00:35,512 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}>
+2019-09-09 09:00:36,487 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '余额不足.'}>
+2019-09-09 09:00:37,427 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '余额不足.'}>
+2019-09-09 09:00:38,989 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '余额不足.'}>
+2019-09-09 09:00:39,303 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,6秒再重试!', 'data': '请求频率过高,6秒再重试!'}>
+2019-09-09 09:00:39,598 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,6秒再重试!', 'data': '请求频率过高,6秒再重试!'}>
+2019-09-09 09:00:39,894 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,6秒再重试!', 'data': '请求频率过高,6秒再重试!'}>
+2019-09-09 09:00:40,176 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,5秒再重试!', 'data': '请求频率过高,5秒再重试!'}>
+2019-09-09 09:00:40,493 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,5秒再重试!', 'data': '请求频率过高,5秒再重试!'}>
+2019-09-09 09:00:40,780 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,5秒再重试!', 'data': '请求频率过高,5秒再重试!'}>
+2019-09-09 09:00:41,106 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,5秒再重试!', 'data': '请求频率过高,5秒再重试!'}>
+2019-09-09 09:00:41,392 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}>
+2019-09-09 09:00:41,694 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}>
+2019-09-09 09:00:41,990 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,4秒再重试!', 'data': '请求频率过高,4秒再重试!'}>
+2019-09-09 09:00:42,293 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:42,577 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:42,864 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,3秒再重试!', 'data': '请求频率过高,3秒再重试!'}>
+2019-09-09 09:00:43,203 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:43,512 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:43,809 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:44,114 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,2秒再重试!', 'data': '请求频率过高,2秒再重试!'}>
+2019-09-09 09:00:44,451 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}>
+2019-09-09 09:00:44,730 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}>
+2019-09-09 09:00:45,020 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,1秒再重试!', 'data': '请求频率过高,1秒再重试!'}>
+2019-09-09 09:00:45,310 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}>
+2019-09-09 09:00:45,604 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,0秒再重试!', 'data': '请求频率过高,0秒再重试!'}>
+2019-09-09 09:00:46,821 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '原始支付密码错误,请重新输入'}>
+2019-09-09 09:00:48,812 -- Auto_frame -- Assertion.py -- 37 -- ERROR -- 预期结果不在实际结果中!,预期结果: <真实姓名必须为中文>,实际响应msg: <支付宝不能重复绑定,修改请联系客服>,实际响应结果: <{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}>
+2019-09-09 09:00:49,407 -- Auto_frame -- Assertion.py -- 37 -- ERROR -- 预期结果不在实际结果中!,预期结果: <请输入支付宝姓名>,实际响应msg: <支付宝不能重复绑定,修改请联系客服>,实际响应结果: <{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}>
+2019-09-09 09:00:49,740 -- Auto_frame -- Assertion.py -- 37 -- ERROR -- 预期结果不在实际结果中!,预期结果: <请输入支付宝账号>,实际响应msg: <支付宝不能重复绑定,修改请联系客服>,实际响应结果: <{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}>
+2019-09-09 09:00:50,086 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '支付宝不能重复绑定,修改请联系客服'}>
+2019-09-09 09:00:50,740 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:51,050 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:51,375 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:51,696 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:52,017 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:52,390 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:56,566 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:56,867 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <0>,实际响应结果: <{'code': 0, 'msg': '操作成功', 'data': True}>
+2019-09-09 09:00:57,197 -- Auto_frame -- Assertion.py -- 37 -- ERROR -- 预期结果不在实际结果中!,预期结果: <单笔出款下限:50>,实际响应msg: < 余额不足！>,实际响应结果: <{'code': 1000001, 'msg': ' 余额不足！'}>
+2019-09-09 09:00:57,854 -- Auto_frame -- Assertion.py -- 37 -- ERROR -- 预期结果不在实际结果中!,预期结果: <单笔出款上限:10000>,实际响应msg: < 余额不足！>,实际响应结果: <{'code': 1000001, 'msg': ' 余额不足！'}>
+2019-09-09 09:00:58,504 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': ' 余额不足！'}>
+2019-09-09 09:00:58,808 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': ' 余额不足！'}>
+2019-09-09 09:00:59,460 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': '资金不足,请先充值!'}>
+2019-09-09 09:01:00,127 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,9秒再重试!', 'data': '请求频率过高,9秒再重试!'}>
+2019-09-09 09:01:00,461 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,8秒再重试!', 'data': '请求频率过高,8秒再重试!'}>
+2019-09-09 09:01:00,771 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,8秒再重试!', 'data': '请求频率过高,8秒再重试!'}>
+2019-09-09 09:01:01,162 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,7秒再重试!', 'data': '请求频率过高,7秒再重试!'}>
+2019-09-09 09:01:01,470 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,7秒再重试!', 'data': '请求频率过高,7秒再重试!'}>
+2019-09-09 09:01:01,778 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,7秒再重试!', 'data': '请求频率过高,7秒再重试!'}>
+2019-09-09 09:01:02,085 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <1000001>,实际响应code: <1000008>,实际响应结果: <{'code': 1000008, 'msg': '请求频率过高,7秒再重试!', 'data': '请求频率过高,7秒再重试!'}>
+2019-09-09 09:01:19,042 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:19,340 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:19,679 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:20,014 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:20,410 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:20,692 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:20,982 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:21,287 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:21,582 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:21,901 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:22,202 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:22,529 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:22,831 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:23,120 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 09:01:23,415 -- Auto_frame -- Assertion.py -- 30 -- ERROR -- 预期结果不在实际结果中!,预期结果: <0>,实际响应code: <1000001>,实际响应结果: <{'code': 1000001, 'msg': 'controller not exists:Index'}>
+2019-09-09 16:59:45,484 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,错误账号,正确密码,登录失败> 不执行!
+2019-09-09 16:59:45,484 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,正确账号,错误密码,登录失败> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,账号为空,正确密码,登录失败> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,正确账号,密码为空,登录失败> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取用户信息> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取当日输赢值> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取体验金活动id> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <体验金活动id正确,领取成功> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <体验金活动id错误,领取失败> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <体验金活动id为空,领取失败> 不执行!
+2019-09-09 16:59:45,485 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请活动id正确,申请成功> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请活动id错误,申请失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,获取奖品列表成功> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id带特殊字符错误,获取奖品列表失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id为空,获取奖品列表失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,获取活动详情成功> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id错误,获取活动详情失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id为空,获取活动详情失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动签到记录> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id正确,提交签到请求成功> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id错误,提交签到请求失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id为空,提交签到请求失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id为其他活动id,提交签到请求失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,抽取白银转盘活动成功> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id错误,抽取白银转盘活动失败> 不执行!
+2019-09-09 16:59:45,486 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id为空,抽取白银转盘活动失败> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,抽取黄金转盘活动成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,抽取钻石转盘活动成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入BB百家乐游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入连环夺宝2游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入连环夺宝游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入187森林舞会游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入糖果派对3游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入BBIN奖池游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入开心消消乐游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入糖果派对游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入糖果派对2游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入猛龙传奇-老虎机游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入金拉霸老虎机游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入百搭777游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入捕鱼达人游戏成功> 不执行!
+2019-09-09 16:59:45,487 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入飞禽走兽游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入抢庄三公游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入极速炸金花游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入金鲨银鲨游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入奔驰宝马游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入百人牛牛游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入森林舞会游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入看三张抢庄牛牛游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入射龙门游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入百家乐游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入斗地主游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入十三水游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入幸运五张游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入抢庄牌九游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入极速炸金花游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入通比牛牛游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入21点游戏成功> 不执行!
+2019-09-09 16:59:45,488 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入押庄龙虎游戏成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入三公游戏成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入炸金花游戏成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入抢庄牛牛游戏成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入二八杠游戏成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入德州扑克游戏成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <KY游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <KY游戏平台号错误,余额转出失败> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <KY游戏平台号为空,余额转出失败> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <BBIN游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <AGIN游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <JDB游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码正确,编辑成功> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码错误,新密码正确,编辑失败> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码为空,新密码正确,编辑失败> 不执行!
+2019-09-09 16:59:45,489 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码不一致,编辑失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码一致长度不对,编辑失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码为空,编辑失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名带特殊符号,账号正确,绑定支付宝失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名正确,账号带特殊字符,绑定支付宝失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名为空,账号正确,绑定支付宝失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名,账号正确,绑定支付宝成功> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名,账号正确,绑定支付宝成功> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款信息正确,入款提交成功> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款姓名带特殊字符错误,入款提交失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款姓名为空,入款提交失败> 不执行!
+2019-09-09 16:59:45,490 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款账户带特殊字符错误,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款账户为空,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款银行带特殊字符错误,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款银行为空,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额超出最大金额限制,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额等于最大限制金额,入款提交成功> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额小于最大限制金额,入款提交成功> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额大于最小限制金额,入款提交成功> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额小于最小限制金额,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额等于最小限制金额,入款提交成功> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款姓名,卡号为空,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款姓名,卡号,银行为空,入款提交失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额小于最小金额限制,申请失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额大于自身金额,申请失败> 不执行!
+2019-09-09 16:59:45,491 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额大于最大限制金额,申请失败> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额为空,申请失败> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额等于最小金额限制,申请成功> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额大于最小金额限制,申请成功> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额大于自身金额,转入失败> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额小于自身金额,转入成功> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额带特殊字符错误,转入失败> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额为空,转入失败> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额大于余额宝金额,转出失败> 不执行!
+2019-09-09 16:59:45,492 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额小于余额宝金额,转出成功> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额小于余额宝金额,转出密码带特殊字符错误,转出失败> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额小于余额宝金额,转出密码为空,转出失败> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额为空,转出密码正确,转出失败> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额为负数,转出密码正确,转出失败> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动大奖记录> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动抽奖记录> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取本周签到状态> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏列表> 不执行!
+2019-09-09 16:59:45,493 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取弹窗公告> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝余额信息> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取跑马灯公告> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取系统设置信息> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝规则信息> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝资金明细信息> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝下次收益到账时间> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取提款扣款信息> 不执行!
+2019-09-09 16:59:45,494 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取进入奖金榜信息> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额信息> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取个人抽奖记录信息> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <邮件全部阅读> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <邮件全部删除> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取vip充值列表> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取公司入款列表> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取支付渠道> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取代理收益信息> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取代理返利榜单> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取代理佣金领取记录> 不执行!
+2019-09-09 16:59:45,495 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取推广奖励信息> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取直属会员列表> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取充值记录> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取账变记录> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取取款记录> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <所有平台资金转出> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取跑马灯中奖信息> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取银行列表> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取轮播> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取联系客服> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取首页最近一条公告> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取公告列表> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取推广规则链接> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取转盘今日有效投注> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取分享领金币> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动列表> 不执行!
+2019-09-09 16:59:45,496 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站游戏列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站KY固定游戏列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站AGIN固定游戏列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站BBIN固定游戏列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站游戏平台列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台真人子列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台电子子列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台彩票子列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台棋牌子列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台体育子列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台捕鱼子列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <综合站收藏夹添加游戏> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <综合站收藏夹列表> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <综合站收藏夹删除游戏> 不执行!
+2019-09-09 16:59:45,497 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站捕鱼游戏列表> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,错误账号,正确密码,登录失败> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,正确账号,错误密码,登录失败> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,账号为空,正确密码,登录失败> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <用户登录,正确账号,密码为空,登录失败> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取用户信息> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取当日输赢值> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取体验金活动id> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <体验金活动id正确,领取成功> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <体验金活动id错误,领取失败> 不执行!
+2019-09-09 17:00:31,095 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <体验金活动id为空,领取失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请活动id正确,申请成功> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请活动id错误,申请失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,获取奖品列表成功> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id带特殊字符错误,获取奖品列表失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id为空,获取奖品列表失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,获取活动详情成功> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id错误,获取活动详情失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id为空,获取活动详情失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动签到记录> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id正确,提交签到请求成功> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id错误,提交签到请求失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id为空,提交签到请求失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <签到id为其他活动id,提交签到请求失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,抽取白银转盘活动成功> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id错误,抽取白银转盘活动失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id为空,抽取白银转盘活动失败> 不执行!
+2019-09-09 17:00:31,096 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,抽取黄金转盘活动成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <活动id正确,抽取钻石转盘活动成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入BB百家乐游戏成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入连环夺宝2游戏成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入连环夺宝游戏成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入187森林舞会游戏成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入糖果派对3游戏成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入BBIN奖池游戏成功> 不执行!
+2019-09-09 17:00:31,099 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入开心消消乐游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入糖果派对游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入糖果派对2游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入猛龙传奇-老虎机游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入金拉霸老虎机游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入百搭777游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入捕鱼达人游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入飞禽走兽游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入抢庄三公游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入极速炸金花游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入金鲨银鲨游戏成功> 不执行!
+2019-09-09 17:00:31,100 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入奔驰宝马游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入百人牛牛游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入森林舞会游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入看三张抢庄牛牛游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入射龙门游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入百家乐游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入斗地主游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入十三水游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入幸运五张游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入抢庄牌九游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入极速炸金花游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入通比牛牛游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入21点游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入押庄龙虎游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入三公游戏成功> 不执行!
+2019-09-09 17:00:31,101 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入炸金花游戏成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入抢庄牛牛游戏成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入二八杠游戏成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <进入德州扑克游戏成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <KY游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <KY游戏平台号错误,余额转出失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <KY游戏平台号为空,余额转出失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <BBIN游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <AGIN游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <JDB游戏平台号正确,余额转出成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码正确,编辑成功> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码错误,新密码正确,编辑失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码为空,新密码正确,编辑失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码不一致,编辑失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码一致长度不对,编辑失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <原始密码正确,新密码为空,编辑失败> 不执行!
+2019-09-09 17:00:31,102 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名带特殊符号,账号正确,绑定支付宝失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名正确,账号带特殊字符,绑定支付宝失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名为空,账号正确,绑定支付宝失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名,账号正确,绑定支付宝成功> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <支付宝姓名,账号正确,绑定支付宝成功> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款信息正确,入款提交成功> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款姓名带特殊字符错误,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款姓名为空,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款账户带特殊字符错误,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款账户为空,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款银行带特殊字符错误,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款存款银行为空,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额超出最大金额限制,入款提交失败> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额等于最大限制金额,入款提交成功> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额小于最大限制金额,入款提交成功> 不执行!
+2019-09-09 17:00:31,103 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额大于最小限制金额,入款提交成功> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额小于最小限制金额,入款提交失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款金额等于最小限制金额,入款提交成功> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款姓名,卡号为空,入款提交失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <公司入款入款姓名,卡号,银行为空,入款提交失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额小于最小金额限制,申请失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额大于自身金额,申请失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额大于最大限制金额,申请失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额为空,申请失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额等于最小金额限制,申请成功> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <申请提款金额大于最小金额限制,申请成功> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额大于自身金额,转入失败> 不执行!
+2019-09-09 17:00:31,104 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额小于自身金额,转入成功> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额带特殊字符错误,转入失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转入金额为空,转入失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额大于余额宝金额,转出失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额小于余额宝金额,转出成功> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额小于余额宝金额,转出密码带特殊字符错误,转出失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额小于余额宝金额,转出密码为空,转出失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额为空,转出密码正确,转出失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <余额宝转出金额为负数,转出密码正确,转出失败> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动大奖记录> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动抽奖记录> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取本周签到状态> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏列表> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取弹窗公告> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝余额信息> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取跑马灯公告> 不执行!
+2019-09-09 17:00:31,105 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取系统设置信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝规则信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝资金明细信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额宝下次收益到账时间> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取提款扣款信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取进入奖金榜信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取余额信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取个人抽奖记录信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <邮件全部阅读> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <邮件全部删除> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取vip充值列表> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取公司入款列表> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取支付渠道> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取代理收益信息> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取代理返利榜单> 不执行!
+2019-09-09 17:00:31,106 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取代理佣金领取记录> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取推广奖励信息> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取直属会员列表> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取充值记录> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取账变记录> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取取款记录> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <所有平台资金转出> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取跑马灯中奖信息> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取银行列表> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取轮播> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取联系客服> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取首页最近一条公告> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取公告列表> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取推广规则链接> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取转盘今日有效投注> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取分享领金币> 不执行!
+2019-09-09 17:00:31,107 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取活动列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站游戏列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站KY固定游戏列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站AGIN固定游戏列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站BBIN固定游戏列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站游戏平台列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台真人子列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台电子子列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台彩票子列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台棋牌子列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台体育子列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取游戏平台捕鱼子列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <综合站收藏夹添加游戏> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <综合站收藏夹列表> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <综合站收藏夹删除游戏> 不执行!
+2019-09-09 17:00:31,108 -- Auto_frame -- Api_test_case.py -- 79 -- WARNING -- 用例: <获取综合站捕鱼游戏列表> 不执行!
