@@ -3,10 +3,10 @@
 
 # @Author     :xiao hei ma
 # @Time       :2019-08-21 16:01:17
-# @File       :Config.py
+# @File       :config.py
 # @Ide        :PyCharm
 
-from Utils.File_Reader import ExcelReader
+
 import os
 import configparser
 import datetime
@@ -25,9 +25,7 @@ class Config(object):
         self.data_path = os.path.join(self.base_path, 'Data')
         self.report_path = os.path.join(self.base_path, 'Report', 'Api_Report.html')
         self.case_path = os.path.join(self.base_path, 'QP_Case')
-        self.data = ExcelReader(self.data_path + '\\Test_Case1.xls').data
         self.Data_ini = os.path.join(self.data_path, 'Data.ini')
-
         self.config = configparser.ConfigParser()
         self.config.read(self.data_ini_path, encoding='utf-8')
         self.username = self.config.get('Login', 'username')
@@ -65,4 +63,4 @@ class Config(object):
 
 if __name__ == '__main__':
     c = Config()
-    print(type(c.port))
+    print(c.Data_ini)

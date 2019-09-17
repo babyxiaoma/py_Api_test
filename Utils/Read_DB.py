@@ -7,7 +7,7 @@
 # @Ide        :PyCharm
 
 import pymysql
-from Config.Config import Config
+from Config.config import Config
 from decimal import *
 from Assets.AssetInterface import *
 

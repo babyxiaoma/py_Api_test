@@ -7,9 +7,9 @@
 # @Ide        :PyCharm
 
 from Utils.Client import HTTPClient
-from Config.Config import Config
+from Config.config import Config
 import time
-from Common.User_Token import login
+from Utils.User_Token import login
 
 
 def get_user_coin():

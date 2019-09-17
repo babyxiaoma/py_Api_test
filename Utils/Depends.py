@@ -6,12 +6,14 @@
 # @File       :Depends.py
 # @Ide        :PyCharm
 
-from Config.Config import Config
+from Config.config import Config
 from Utils.Client import HTTPClient
-from Common.User_Token import login
-from Utils.File_Reader import OpenIni
+from Utils.User_Token import login
+from Utils.Open_Ini import OpenIni
 from Utils.Log import logger
-from Utils.Extractor import JMESPathExtractor
+from Utils.JMESPath_Extractor import JMESPathExtractor
+from Utils.File_Reader import ExcelReader
+
 
 
 class Depend_Data(object):
@@ -28,8 +30,9 @@ class Depend_Data(object):
          :param keys: 组装dict的key,如不是列表则传单个字符串
          :return:
         '''
+        _data = ExcelReader(self.c.data_path + '\\Test_Case1.xls').data
         value_list = []
-        for i in self.c.data:
+        for i in _data:
             if case_id == i['CaseID']:
                 logger.info('执行依赖数据CaseID: <{}>'.format(case_id))
                 logger.info('被依赖的json查询值: <{}>'.format(query))

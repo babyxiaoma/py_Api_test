@@ -8,7 +8,7 @@
 
 from Support.HTMLTestRunner import HTMLTestRunner
 import unittest
-from Config.Config import Config
+from Config.config import Config
 from Utils.Mail import Email
 
 

@@ -8,25 +8,8 @@
 
 import os
 import xlrd
-import configparser
-from Config.Config import Config
-from Utils.Log import logger
-import json
 
 
-class OpenIni(object):
-    def __init__(self):
-        self.c = Config()
-
-    def get_data(self, option):
-        try:
-            if option != '':
-                c = configparser.ConfigParser()
-                c.read(self.c.Data_ini, encoding='utf-8')
-                data = c.get('data', option=option)
-                return json.loads(data)
-        except Exception:
-            logger.error('节点id值: <{}> 错误,请检查!'.format(option))
 
 
 class SheetTypeError(Exception):
@@ -93,9 +76,6 @@ class ExcelReader(object):
         return self._data
 
 
-if __name__ == '__main__':
-    from Config.Config import Config
-    import json
 
-    x = ExcelReader(Config().data_path + '\\Test_Case.xls')
-    print(x)
+
+

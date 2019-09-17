@@ -7,7 +7,7 @@
 # @Ide        :PyCharm
 
 from Utils.Client import HTTPClient
-from Config.Config import Config
+from Config.config import Config
 from Utils.Log import logger
 
 

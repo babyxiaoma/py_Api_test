@@ -7,7 +7,7 @@
 # @Software: PyCharm
 
 import logging
-from Config.Config import Config
+from Config.config import Config
 from logging.handlers import TimedRotatingFileHandler
 
 

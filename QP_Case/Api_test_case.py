@@ -11,21 +11,21 @@ import os
 
 sys.path.append(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0])
 import unittest
-from Config.Config import Config
+from Config.config import Config
 from Utils.Client import HTTPClient
 from Utils.Log import logger
 from Utils.Assertion import Error
-from Common.User_Token import login
-from Utils.File_Reader import OpenIni
+from Utils.User_Token import login
+from Utils.File_Reader import *
 from Utils.Depends import Depend_Data
 from Assets.AssetInterface import *
+from Utils.Open_Ini import OpenIni
 
 
 class QP_Api_Test(unittest.TestCase):
     c = Config()
     e = Error()
-    ini = OpenIni()
-    datas = c.data
+    datas = _data = ExcelReader(c.data_path + '\\Test_Case1.xls').data
 
     def test_api_all(self):
         '''主运行函数'''
@@ -38,7 +38,7 @@ class QP_Api_Test(unittest.TestCase):
                     expect_code = i['expect_code']
                     expect_msg = i['expect_msg']
                     is_token = i['is_token']
-                    data = self.ini.get_data(data_id)
+                    data = OpenIni().get_data(data_id)
                     depend_id = i['depend_id']
                     query_depend = i['query_depend']
                     field_depend = i['field_depend']
